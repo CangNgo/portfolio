@@ -1,0 +1,152 @@
+[
+  {
+    "title": { "vi": "Backend Development", "en": "Backend Development" },
+    "skills": [
+      {
+        "name": "Java (Spring Boot)",
+        "level": "Proficient",
+        "experienceYears": "Kinh nghiệm thực tế",
+        "highlight": true,
+        "description": {
+          "vi": "Xây dựng RESTful API, thiết kế backend service với Spring Boot cho các dự án thực tế.",
+          "en": "Building RESTful APIs and backend services with Spring Boot for production projects."
+        }
+      },
+      {
+        "name": "NestJS",
+        "level": "Proficient",
+        "experienceYears": "Kinh nghiệm thực tế",
+        "highlight": true,
+        "description": {
+          "vi": "Xây dựng RESTful API và cấu trúc backend module hóa với TypeScript.",
+          "en": "Building RESTful APIs and modular backend structures with TypeScript."
+        }
+      },
+      {
+        "name": "RabbitMQ",
+        "level": "Proficient",
+        "experienceYears": "Kinh nghiệm thực tế",
+        "highlight": true,
+        "description": {
+          "vi": "Giao tiếp bất đồng bộ giữa các service trong kiến trúc microservices.",
+          "en": "Asynchronous inter-service communication in microservices architectures."
+        }
+      },
+      {
+        "name": "TypeScript / JavaScript",
+        "level": "Proficient",
+        "experienceYears": "Kinh nghiệm thực tế",
+        "highlight": false,
+        "description": {
+          "vi": "Ngôn ngữ chính cho cả backend (NestJS) và frontend (ReactJS).",
+          "en": "Primary language for both backend (NestJS) and frontend (ReactJS) development."
+        }
+      }
+    ]
+  },
+  {
+    "title": { "vi": "Frontend Development", "en": "Frontend Development" },
+    "skills": [
+      {
+        "name": "ReactJS",
+        "level": "Experienced",
+        "experienceYears": "Kinh nghiệm thực tế",
+        "highlight": true,
+        "description": {
+          "vi": "Xây dựng giao diện người dùng cho các dự án web fullstack.",
+          "en": "Building user interfaces for fullstack web projects."
+        }
+      }
+    ]
+  },
+  {
+    "title": { "vi": "Databases & Storage", "en": "Databases & Storage" },
+    "skills": [
+      {
+        "name": "PostgreSQL / MySQL",
+        "level": "Proficient",
+        "experienceYears": "Kinh nghiệm thực tế",
+        "highlight": true,
+        "description": {
+          "vi": "Thiết kế schema, tối ưu truy vấn thông qua indexing.",
+          "en": "Schema design and query optimization through indexing."
+        }
+      },
+      {
+        "name": "Redis",
+        "level": "Proficient",
+        "experienceYears": "Kinh nghiệm thực tế",
+        "highlight": true,
+        "description": {
+          "vi": "Caching để cải thiện hiệu năng hệ thống và giảm tải database.",
+          "en": "Caching to improve system performance and reduce database load."
+        }
+      },
+      {
+        "name": "MongoDB",
+        "level": "Experienced",
+        "experienceYears": "Kinh nghiệm thực tế",
+        "highlight": false,
+        "description": {
+          "vi": "Lưu trữ dữ liệu dạng document cho các dự án phù hợp.",
+          "en": "Document-based data storage for suitable projects."
+        }
+      }
+    ]
+  },
+  {
+    "title": { "vi": "DevOps & Tools", "en": "DevOps & Tools" },
+    "skills": [
+      {
+        "name": "Docker",
+        "level": "Proficient",
+        "experienceYears": "Kinh nghiệm thực tế",
+        "highlight": true,
+        "description": {
+          "vi": "Đóng gói và triển khai backend service.",
+          "en": "Containerizing and deploying backend services."
+        }
+      },
+      {
+        "name": "AWS (EC2, S3)",
+        "level": "Basic",
+        "experienceYears": "Cơ bản",
+        "highlight": true,
+        "description": {
+          "vi": "Triển khai và quản lý service backend trên EC2, lưu trữ file trên S3.",
+          "en": "Deploying and managing backend services on EC2, file storage on S3."
+        }
+      },
+      {
+        "name": "Git & GitHub",
+        "level": "Proficient",
+        "experienceYears": "Kinh nghiệm thực tế",
+        "highlight": false,
+        "description": {
+          "vi": "Quản lý source code và collaboration cho các dự án cá nhân và nhóm.",
+          "en": "Source control and collaboration for individual and team projects."
+        }
+      },
+      {
+        "name": "Postman",
+        "level": "Proficient",
+        "experienceYears": "Kinh nghiệm thực tế",
+        "highlight": false,
+        "description": {
+          "vi": "Kiểm thử và tài liệu hóa RESTful API.",
+          "en": "Testing and documenting RESTful APIs."
+        }
+      },
+      {
+        "name": "Agile / Scrum / Waterfall",
+        "level": "Experienced",
+        "experienceYears": "Kinh nghiệm thực tế",
+        "highlight": false,
+        "description": {
+          "vi": "Làm việc theo các quy trình phát triển phần mềm Agile, Scrum và Waterfall.",
+          "en": "Working within Agile, Scrum, and Waterfall software development processes."
+        }
+      }
+    ]
+  }
+]

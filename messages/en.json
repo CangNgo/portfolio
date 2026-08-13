@@ -1,0 +1,112 @@
+{
+  "Nav": {
+    "experience": "Experience",
+    "projects": "Projects & Case Studies",
+    "skills": "Skills",
+    "blog": "Blog",
+    "contact": "Contact",
+    "viewResume": "View Resume",
+    "viewResumeFull": "View Full Resume / CV",
+    "langToggleTitle": "Switch Language / Đổi ngôn ngữ",
+    "themeToLight": "Switch to Light Mode",
+    "themeToDark": "Switch to Dark Mode"
+  },
+  "Hero": {
+    "subtitle": "System Architecture & Web Apps",
+    "ctaResume": "View Full Resume",
+    "ctaContact": "Contact Me",
+    "githubTitle": "GitHub Profile",
+    "linkedinTitle": "LinkedIn Profile",
+    "emailTitle": "Send Email"
+  },
+  "Experience": {
+    "tag": "Career Journey",
+    "headingPrefix": "Work",
+    "headingHighlight": "Experience & Impact",
+    "description": "Focused on optimizing high-load backend architecture, large-scale data processing, and building smooth user interfaces with measurable results.",
+    "metricExperienceLabel": "Experience",
+    "metricExperienceValue": "1+ Years",
+    "metricThroughputLabel": "Positions Held",
+    "metricThroughputValue": "2",
+    "bullet1": "Microservices & Distributed Systems",
+    "bullet2": "DB Query & Caching Strategy Optimization",
+    "bullet3": "CI/CD Automation & Telemetry",
+    "ctaContact": "Get in touch",
+    "currentBadge": "Current",
+    "keyAchievements": "Key Achievements & Impact",
+    "techStackLabel": "Core tech stack:"
+  },
+  "Projects": {
+    "tag": "Featured Projects & Case Studies",
+    "heading": "Projects & System Analysis",
+    "description": "A collection of backend projects (Spring Boot, RabbitMQ, Redis) analyzed by problem, architecture, results, and engineering trade-offs.",
+    "featuredBadge": "Featured Fullstack",
+    "readCaseStudy": "Read Full Case Study"
+  },
+  "CaseStudyModal": {
+    "roleLabel": "Role:",
+    "problemHeading": "1. The Problem",
+    "archHeading": "2. Architecture & Solution",
+    "techHeading": "3. Tech Stack",
+    "resultsHeading": "4. Results & Trade-offs",
+    "metricsLabel": "Results & Key Metrics:",
+    "tradeoffsLabel": "Engineering Trade-offs:",
+    "liveDemo": "Live Demo",
+    "githubRepo": "GitHub Repo",
+    "viewFullPage": "View Full Case Study Page",
+    "close": "Close",
+    "diagramTitle": "System Architecture Flow Diagram (Interactive)",
+    "diagramSubtitle": "Click on a component below to view its role",
+    "flowsLabel": "Main communication flows (Data Pipes):",
+    "selectNodeHint": "Select a node to view architecture details",
+    "architecturalPurpose": "Architectural Purpose",
+    "techStackSubLabel": "Tech Stack / Sub-system",
+    "flowModelVersion": "Flow Model v2.4",
+    "active": "Active"
+  },
+  "Skills": {
+    "tag": "Technical Capabilities",
+    "heading": "Skills & Technologies",
+    "description": "Practical skills categorized by core areas, focused on backend microservices, database design, and modern frontend.",
+    "searchPlaceholder": "Search skills (e.g. NestJS, Java)...",
+    "coreBadge": "Core",
+    "philosophy": "Focused on solving real product problems rather than chasing trends. Always prioritizing Clean Code, Type Safety, TDD, and scalable system design."
+  },
+  "Blog": {
+    "tag": "Technical Writing & Articles",
+    "heading": "Technical Articles",
+    "description": "Technical deep-dives on System Design, NestJS, PostgreSQL optimization, and fullstack engineering standards.",
+    "featuredBadge": "Featured",
+    "readArticle": "Read Article",
+    "closeArticle": "Close Article",
+    "viewFullPage": "View Full Article",
+    "writtenBy": "Written by"
+  },
+  "Contact": {
+    "tag": "Connect & Collaborate",
+    "heading": "Get In Touch",
+    "description": "Looking for a Fullstack Developer for your next project, or just want to talk shop? Send me a message.",
+    "contactDetailsHeading": "Contact Details",
+    "emailLabel": "Email",
+    "locationLabel": "Location",
+    "phoneLabel": "Phone",
+    "phoneValue": "0839 404 831",
+    "socialHeading": "Professional Social Links",
+    "formNameLabel": "Full Name *",
+    "formEmailLabel": "Contact Email *",
+    "formSubjectLabel": "Subject",
+    "formSubjectPlaceholder": "Backend project opportunity...",
+    "formMessageLabel": "Message *",
+    "formMessagePlaceholder": "Briefly describe your project needs or question...",
+    "formSubmit": "Send Message",
+    "formSubmitting": "Sending...",
+    "formError": "Failed to send, please try again later.",
+    "successHeading": "Thanks For Your Message!",
+    "successMessage": "I'll get back to you via email within 24 hours.",
+    "sendAnother": "Send another message"
+  },
+  "Footer": {
+    "tagline": "Built with Next.js/React, TypeScript & Tailwind CSS • Minimalist Flat Design",
+    "backToTop": "Top"
+  }
+}

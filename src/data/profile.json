@@ -1,0 +1,17 @@
+{
+  "name": "Ngo Tan Cang",
+  "role": "Fullstack Developer",
+  "email": "cangngoo123@gmail.com",
+  "location": "Ho Chi Minh City, Vietnam",
+  "github": "https://github.com/CangNgo",
+  "linkedin": "https://www.linkedin.com/in/ngo-tan-cang",
+  "resumeUrl": "/resume.pdf",
+  "status": {
+    "vi": "Sẵn sàng cho vị trí Fullstack Developer mới",
+    "en": "Open for Fullstack Developer opportunities"
+  },
+  "bio": {
+    "vi": "Fullstack Developer với kinh nghiệm thực chiến xây dựng RESTful API và triển khai ứng dụng web hoàn chỉnh cho khách hàng freelance. Có kinh nghiệm tối ưu cơ sở dữ liệu, caching với Redis và kiến trúc hướng message với RabbitMQ.",
+    "en": "Fullstack Developer with hands-on experience building RESTful APIs and delivering end-to-end web applications for freelance clients. Experienced in database optimization, caching with Redis, and message-driven architecture with RabbitMQ."
+  }
+}

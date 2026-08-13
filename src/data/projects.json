@@ -1,0 +1,111 @@
+[
+  {
+    "id": "fsocial",
+    "title": {
+      "vi": "Fsocial — Nền Tảng Mạng Xã Hội",
+      "en": "Fsocial — Social Media Platform"
+    },
+    "tagline": {
+      "vi": "Nền tảng mạng xã hội với backend microservices, giao tiếp bất đồng bộ qua RabbitMQ và triển khai trên AWS.",
+      "en": "A social media platform with a microservices backend, asynchronous messaging via RabbitMQ, and AWS deployment."
+    },
+    "featured": true,
+    "category": "Backend Heavy",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=1200&q=80",
+    "demoUrl": "https://www.fsocial.online",
+    "githubUrl": "https://github.com/CangNgo/Fsocial",
+    "period": "12/2026 - Hiện tại",
+    "role": {
+      "vi": "Back End Developer & DevOps",
+      "en": "Back End Developer & DevOps"
+    },
+    "problem": {
+      "vi": "Xây dựng một nền tảng mạng xã hội từ đầu, một mình, đòi hỏi backend phải chịu được các thao tác tương tác thời gian thực (đăng bài, tương tác) trong khi vẫn giữ được khả năng mở rộng và chi phí hạ tầng hợp lý cho một dự án cá nhân.",
+      "en": "Building a social media platform solo from scratch required a backend that could handle real-time interaction workloads (posting, engagement) while staying scalable and cost-efficient to run as a personal project."
+    },
+    "architectureSolution": {
+      "vi": "Thiết kế backend theo hướng microservices với Spring Boot và Spring Cloud, tách các service theo domain nghiệp vụ. Sử dụng RabbitMQ cho giao tiếp bất đồng bộ giữa các service, giảm coupling và tăng khả năng chịu lỗi. Áp dụng Redis caching để giảm tải cho database ở các truy vấn đọc thường xuyên. Đóng gói toàn bộ hệ thống bằng Docker và triển khai trên AWS.",
+      "en": "Designed a microservices backend with Spring Boot and Spring Cloud, splitting services by business domain. Used RabbitMQ for asynchronous inter-service communication to reduce coupling and improve fault tolerance. Applied Redis caching to offload frequent read queries from the database. Containerized the whole system with Docker and deployed it on AWS."
+    },
+    "systemArchitecture": {
+      "summary": {
+        "vi": "Client -> Spring Cloud API Gateway -> Microservices (Spring Boot) -> RabbitMQ (async events) -> Redis Cache -> Database, toàn bộ chạy trên Docker container trên AWS.",
+        "en": "Client -> Spring Cloud API Gateway -> Microservices (Spring Boot) -> RabbitMQ (async events) -> Redis Cache -> Database, all running in Docker containers on AWS."
+      },
+      "nodes": [
+        {
+          "id": "client",
+          "label": "Client App",
+          "sublabel": "Web",
+          "type": "client",
+          "description": "Giao diện người dùng gửi request tới hệ thống"
+        },
+        {
+          "id": "gateway",
+          "label": "API Gateway",
+          "sublabel": "Spring Cloud Gateway",
+          "type": "gateway",
+          "description": "Định tuyến request tới các microservice tương ứng"
+        },
+        {
+          "id": "services",
+          "label": "Core Services",
+          "sublabel": "Spring Boot Microservices",
+          "type": "service",
+          "description": "Xử lý logic nghiệp vụ chính của nền tảng"
+        },
+        {
+          "id": "rabbitmq",
+          "label": "RabbitMQ",
+          "sublabel": "Message Broker",
+          "type": "broker",
+          "description": "Giao tiếp bất đồng bộ giữa các service"
+        },
+        {
+          "id": "redis",
+          "label": "Redis",
+          "sublabel": "Cache Layer",
+          "type": "cache",
+          "description": "Giảm tải truy vấn đọc thường xuyên"
+        },
+        {
+          "id": "database",
+          "label": "Database",
+          "sublabel": "Persistent Storage",
+          "type": "database",
+          "description": "Lưu trữ dữ liệu người dùng và nội dung"
+        }
+      ],
+      "links": [
+        { "from": "client", "to": "gateway", "label": "HTTPS", "type": "sync" },
+        { "from": "gateway", "to": "services", "label": "Route Request", "type": "sync" },
+        {
+          "from": "services",
+          "to": "rabbitmq",
+          "label": "Publish Event",
+          "type": "async"
+        },
+        {
+          "from": "services",
+          "to": "redis",
+          "label": "Cache Read/Write",
+          "type": "cache"
+        },
+        { "from": "services", "to": "database", "label": "Persist Data", "type": "sync" }
+      ]
+    },
+    "techStack": ["Spring Boot", "Spring Cloud", "RabbitMQ", "Redis", "Docker", "AWS"],
+    "resultsAndTradeoffs": {
+      "metrics": [
+        "Triển khai và vận hành thành công backend microservices hoàn chỉnh trên AWS",
+        "Tách biệt rõ ràng các service nghiệp vụ, dễ bảo trì và mở rộng độc lập"
+      ],
+      "tradeoffs": [
+        {
+          "vi": "Chọn kiến trúc microservices ngay từ đầu cho một dự án cá nhân giúp học và áp dụng thực tế các pattern hệ thống phân tán, đổi lại tăng độ phức tạp vận hành so với một monolith đơn giản.",
+          "en": "Chose a microservices architecture from day one for a solo project to practice real-world distributed system patterns, trading off added operational complexity compared to a simple monolith."
+        }
+      ]
+    }
+  }
+]

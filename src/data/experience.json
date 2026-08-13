@@ -1,0 +1,47 @@
+[
+  {
+    "id": "exp-hopper",
+    "company": "Hopper Solution and Education",
+    "role": {
+      "vi": "Fullstack Developer & Business Analyst",
+      "en": "Fullstack Developer & Business Analyst"
+    },
+    "period": "05/2025 - 07/2026",
+    "isCurrent": true,
+    "location": "TP. Hồ Chí Minh",
+    "description": {
+      "vi": [
+        "Thiết kế và triển khai RESTful API phục vụ giao tiếp frontend-backend, cải thiện thời gian phản hồi hệ thống.",
+        "Tối ưu hóa truy vấn cơ sở dữ liệu bằng indexing và Redis caching, nâng cao hiệu năng hệ thống đáng kể.",
+        "Xử lý lỗi và cải tiến các tính năng hiện có để tăng độ ổn định và hiệu năng hệ thống.",
+        "Đảm nhận vai trò Business Analyst: phân tích cơ sở dữ liệu hiện có, thiết kế data model và chuyển hóa yêu cầu nghiệp vụ thành schema cơ sở dữ liệu tối ưu, hỗ trợ hệ thống backend có khả năng mở rộng."
+      ],
+      "en": [
+        "Designed and implemented RESTful APIs to support frontend-backend communication and improve response time.",
+        "Optimized database queries through indexing and Redis caching to significantly improve system performance.",
+        "Resolved bugs and enhanced existing features to improve system stability and performance.",
+        "Served as a Business Analyst, analyzing existing databases, designing data models, and translating business requirements into optimized database schemas to support scalable backend systems."
+      ]
+    },
+    "highlights": ["RESTful API", "Redis", "Database Optimization", "Business Analysis"]
+  },
+  {
+    "id": "exp-hungthinh",
+    "company": "TNHH Thuong mai va Dich vu Hung Thinh",
+    "role": { "vi": "Thực tập sinh Web Developer", "en": "Intern Web Developer" },
+    "period": "01/2025 - 03/2025",
+    "isCurrent": false,
+    "location": "TP. Hồ Chí Minh",
+    "description": {
+      "vi": [
+        "Phát triển và cải tiến các tính năng cốt lõi, nâng cao độ ổn định và khả năng bảo trì hệ thống.",
+        "Tham gia kiểm thử và sửa lỗi nhằm giảm thiểu sự cố sau khi phát hành."
+      ],
+      "en": [
+        "Developed and enhanced core features, improving overall system stability and maintainability.",
+        "Participated in testing and bug fixing to reduce post-release issues."
+      ]
+    },
+    "highlights": ["Web Development", "Testing", "Bug Fixing"]
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "nestjs-postgres-performance",
+    "slug": "nestjs-postgres-performance",
+    "title": {
+      "vi": "Tối Ưu Hiệu Năng Truy Vấn PostgreSQL Trong Dự Án NestJS Quy Mô Lớn",
+      "en": "Optimizing PostgreSQL Query Performance in Scale NestJS Applications"
+    },
+    "summary": {
+      "vi": "Phân tích các sai lầm phổ biến dẫn đến nghẽn DB (N+1 query, thiếu composite index, unindexed JSONB) và cách khắc phục chi tiết với TypeORM/Prisma.",
+      "en": "Exploring common database bottlenecks (N+1 queries, missing composite indexes, unindexed JSONB) and actionable fixes with TypeORM/Prisma."
+    },
+    "content": {
+      "vi": "### 1. Đặt Vấn Đề\nKhi ứng dụng NestJS của bạn phát triển từ vài trăm người dùng lên hàng chục nghìn request mỗi phút, tầng cơ sở dữ liệu thường là điểm thắt cổ chai (bottleneck) đầu tiên. \n\n### 2. Nguyên Nhân Nghẽn DB Phổ Biến\n- **Vấn đề N+1 Queries**: Xảy ra khi load danh sách với quan hệ Eager/Lazy mà không JOIN.\n- **Thiếu Composite Index**: Các câu lệnh WHERE trên nhiều cột như `WHERE status = 'ACTIVE' AND created_at > ...` bị Full Table Scan.\n- **Lạm dụng ORM**: Sử dụng `.find()` lấy tất cả các cột thay vì chỉ chọn các trường cần thiết (`select: ['id', 'name']`).\n\n### 3. Giải Pháp Thực Tế\n#### a) Lọc cột dữ liệu trả về\nNhiều lập trình viên có thói quen trả về toàn bộ Entity bao gồm cả các trường text dài. Hãy chỉ định rõ:\n```typescript\nconst users = await this.userRepository.find({\n  select: ['id', 'email', 'fullName', 'createdAt'],\n  where: { status: 'ACTIVE' }\n});\n```\n\n#### b) Đánh chỉ mục (Indexing) thông minh\nTạo Composite Index cho các truy vấn thường đi kèm nhau:\n```sql\nCREATE INDEX idx_orders_user_status ON orders(user_id, status, created_at DESC);\n```\n\n#### c) Tận dụng Redis Caching Layer\nVới các dữ liệu ít thay đổi như Configuration hoặc Category Tree, áp dụng Cache-Aside pattern với TTL hợp lý.",
+      "en": "### 1. Introduction\nWhen your NestJS service scales to thousands of requests per second, the database layer is almost always the first bottleneck.\n\n### 2. Common DB Bottlenecks\n- **N+1 Query Anti-pattern**: Fetching relations in loops without explicit joins.\n- **Missing Composite Indexes**: Queries filtering on multiple columns causing expensive full table scans.\n- **ORM Over-fetching**: Using default `.find()` bringing heavy text/blob columns back over the wire.\n\n### 3. Actionable Solutions\n#### a) Selective Field Projection\nAlways select only required fields instead of entire entities:\n```typescript\nconst users = await this.userRepository.find({\n  select: ['id', 'email', 'fullName', 'createdAt'],\n  where: { status: 'ACTIVE' }\n});\n```\n\n#### b) Smart Indexing Strategy\nBuild composite indexes for compound queries:\n```sql\nCREATE INDEX idx_orders_user_status ON orders(user_id, status, created_at DESC);\n```\n\n#### c) Redis Caching Layer\nApply Cache-Aside pattern with suitable TTLs for read-heavy, low-churn datasets."
+    },
+    "publishedAt": "2026-02-15",
+    "readTime": "6 min read",
+    "tags": ["NestJS", "PostgreSQL", "Performance", "Backend"],
+    "featured": true
+  },
+  {
+    "id": "redis-rate-limiting-patterns",
+    "slug": "redis-rate-limiting-patterns",
+    "title": {
+      "vi": "Xây Dựng System Rate Limiter Phân Tán Với Redis & Sliding Window Algorithm",
+      "en": "Building Distributed Rate Limiters with Redis & Sliding Window Algorithm"
+    },
+    "summary": {
+      "vi": "Hướng dẫn so sánh giữa Fixed Window, Token Bucket và Sliding Window Log để bảo vệ API khỏi tấn công DDoS và cào dữ liệu.",
+      "en": "Deep dive comparison between Fixed Window, Token Bucket, and Sliding Window Log algorithms to safeguard APIs."
+    },
+    "content": {
+      "vi": "### Tầm Quan Trọng Của Rate Limiting\nRate limiting là tuyến phòng thủ không thể thiếu đối với mọi hệ thống API Gateway hiện đại.\n\n### Các Thuật Toán Phổ Biến\n1. **Fixed Window Counter**: Đơn giản nhưng bị hiện tượng dồn Spike ở ranh giới window.\n2. **Token Bucket**: Phù hợp cho traffic bùng nổ (bursty traffic).\n3. **Sliding Window Log / Counter**: Độ chính xác cao nhất, loại bỏ hoàn toàn ranh giới cứng.\n\n### Cài Đặt Redis Lua Script Cho Sliding Window\nSử dụng Redis Sorted Sets (ZSET) với timestamp làm score:\n```lua\nlocal key = KEYS[1]\nlocal now = tonumber(ARGV[1])\nlocal window = tonumber(ARGV[2])\nlocal limit = tonumber(ARGV[3])\nlocal clearBefore = now - window\n\nredis.call('ZREMRANGEBYSCORE', key, 0, clearBefore)\nlocal currentRequests = redis.call('ZCARD', key)\n\nif currentRequests < limit then\n    redis.call('ZADD', key, now, now)\n    redis.call('EXPIRE', key, math.ceil(window / 1000))\n    return 1\nelse\n    return 0\nend\n```\nĐoạn Lua script trên được thực thi nguyên tử (atomic) trên Redis server, đảm bảo không bị race condition trong môi trường đa tiến trình.",
+      "en": "### Why Rate Limiting Matters\nRate limiting is an essential defense mechanism for modern API Gateways and microservices.\n\n### Algorithm Comparison\n1. **Fixed Window Counter**: Easy to implement but vulnerable to traffic spikes at window boundaries.\n2. **Token Bucket**: Ideal for bursty, flexible traffic.\n3. **Sliding Window Log**: Highest precision, completely eliminates artificial window edge bursts.\n\n### Redis Lua Script Implementation\nUsing Redis Sorted Sets (ZSET) with microsecond timestamps:\n```lua\nlocal key = KEYS[1]\nlocal now = tonumber(ARGV[1])\nlocal window = tonumber(ARGV[2])\nlocal limit = tonumber(ARGV[3])\nlocal clearBefore = now - window\n\nredis.call('ZREMRANGEBYSCORE', key, 0, clearBefore)\nlocal currentRequests = redis.call('ZCARD', key)\n\nif currentRequests < limit then\n    redis.call('ZADD', key, now, now)\n    redis.call('EXPIRE', key, math.ceil(window / 1000))\n    return 1\nelse\n    return 0\nend\n```\nThis Lua script executes atomically on Redis, preventing race conditions across concurrent application nodes."
+    },
+    "publishedAt": "2026-01-20",
+    "readTime": "8 min read",
+    "tags": ["Redis", "System Design", "Backend", "Security"],
+    "featured": true
+  },
+  {
+    "id": "nextjs-app-router-architecture-clean-code",
+    "slug": "nextjs-app-router-architecture-clean-code",
+    "title": {
+      "vi": "Kiến Trúc Clean Code Trong Next.js App Router Dành Cho Lập Trình Viên Fullstack",
+      "en": "Clean Architecture Patterns in Next.js App Router for Fullstack Engineers"
+    },
+    "summary": {
+      "vi": "Cách tổ chức folder, tách biệt giữa Server Components và Client Components, quản lý state và xử lý Server Actions hiệu quả.",
+      "en": "Structuring directories, boundary separation between Server/Client components, and clean Server Actions."
+    },
+    "content": {
+      "vi": "### Tách Biệt Trách Nhiệm Trực Quan\nTrong Next.js App Router, tư duy thiết kế phần mềm thay đổi từ Client-first sang Server-first.\n\n### Quy Tắc Vàng\n- **Server Components theo mặc định**: Luôn fetch dữ liệu, đọc DB trực tiếp trên Server Component nếu có thể.\n- **Client Components ở lá (Leaf Components)**: Chỉ gắn `'use client'` cho các UI element cần tính tương tác (form, toggle, modal, state handler).\n- **Server Actions**: Bao bọc các thao tác mutation với Zod validation để đảm bảo type safety từ Client tới Server.",
+      "en": "### Paradigm Shift\nNext.js App Router shifts the architecture mindset from Client-first to Server-first default.\n\n### Core Golden Rules\n- **Server Components by Default**: Fetch data and access backend services directly in Server Components whenever possible.\n- **Client Components at the Leaves**: Only apply `'use client'` to interactive UI nodes (buttons, form inputs, toggles, modals).\n- **Server Actions**: Wrap mutations with Zod validation schemas for end-to-end type safety."
+    },
+    "publishedAt": "2025-11-10",
+    "readTime": "5 min read",
+    "tags": ["Next.js", "React", "Frontend", "TypeScript"],
+    "featured": false
+  }
+]

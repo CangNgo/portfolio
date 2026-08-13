@@ -1,0 +1,112 @@
+{
+  "Nav": {
+    "experience": "Kinh nghiệm",
+    "projects": "Dự án & Case Study",
+    "skills": "Kỹ năng",
+    "blog": "Bài viết",
+    "contact": "Liên hệ",
+    "viewResume": "Xem CV",
+    "viewResumeFull": "Xem Resume / CV Chi Tiết",
+    "langToggleTitle": "Switch Language / Đổi ngôn ngữ",
+    "themeToLight": "Chuyển sang Light Mode",
+    "themeToDark": "Chuyển sang Dark Mode"
+  },
+  "Hero": {
+    "subtitle": "System Architecture & Web Apps",
+    "ctaResume": "Xem CV Chi Tiết",
+    "ctaContact": "Liên Hệ Ngay",
+    "githubTitle": "GitHub Profile",
+    "linkedinTitle": "LinkedIn Profile",
+    "emailTitle": "Gửi Email"
+  },
+  "Experience": {
+    "tag": "Hành Trình Sự Nghiệp",
+    "headingPrefix": "Kinh Nghiệm",
+    "headingHighlight": "Thực Chiến & Impact",
+    "description": "Tập trung tối ưu hóa kiến trúc Backend cao tải, xử lý dữ liệu quy mô lớn và xây dựng giao diện người dùng mượt mà với những số liệu đo lường cụ thể.",
+    "metricExperienceLabel": "Kinh nghiệm",
+    "metricExperienceValue": "1+ Năm",
+    "metricThroughputLabel": "Vị trí đã trải qua",
+    "metricThroughputValue": "2",
+    "bullet1": "Microservices & Distributed Systems",
+    "bullet2": "Tối ưu Query DB & Caching Strategy",
+    "bullet3": "CI/CD Automation & Telemetry",
+    "ctaContact": "Liên hệ làm việc",
+    "currentBadge": "Hiện tại",
+    "keyAchievements": "Kết quả & Impact chính",
+    "techStackLabel": "Công nghệ chính:"
+  },
+  "Projects": {
+    "tag": "Dự Án Tiêu Biểu & Case Studies",
+    "heading": "Dự Án & Phân Tích Hệ Thống",
+    "description": "Tổng hợp các dự án Backend (Spring Boot, RabbitMQ, Redis) được phân tích theo bài toán, kiến trúc, chỉ số kết quả và trade-off kỹ thuật.",
+    "featuredBadge": "Featured Fullstack",
+    "readCaseStudy": "Xem Case Study Chi Tiết"
+  },
+  "CaseStudyModal": {
+    "roleLabel": "Vai trò:",
+    "problemHeading": "1. Bài Toán Đặt Ra (The Problem)",
+    "archHeading": "2. Kiến Trúc & Giải Pháp (Architecture & Solution)",
+    "techHeading": "3. Công Nghệ Sử Dụng (Tech Stack)",
+    "resultsHeading": "4. Kết Quả & Trade-off Cân Nhắc",
+    "metricsLabel": "Kết quả & Chỉ số ấn tượng:",
+    "tradeoffsLabel": "Trade-offs Kỹ Thuật Đã Đánh Đổi:",
+    "liveDemo": "Demo Trực Tiếp",
+    "githubRepo": "Mã Nguồn Repo",
+    "viewFullPage": "Xem Trang Case Study Đầy Đủ",
+    "close": "Đóng",
+    "diagramTitle": "Sơ Đồ Kiến Trúc Luồng Hệ Thống (Interactive System Flow)",
+    "diagramSubtitle": "Click vào các component bên dưới để xem chi tiết vai trò",
+    "flowsLabel": "Các luồng giao tiếp chính (Data Pipes):",
+    "selectNodeHint": "Select a node to view architecture details",
+    "architecturalPurpose": "Nhiệm Vụ Kiến Trúc",
+    "techStackSubLabel": "Tech Stack / Sub-system",
+    "flowModelVersion": "Flow Model v2.4",
+    "active": "Active"
+  },
+  "Skills": {
+    "tag": "Năng Lực Kỹ Thuật",
+    "heading": "Kỹ Năng & Công Nghệ",
+    "description": "Phân loại kỹ năng thực tế theo các lĩnh vực chính, tập trung vào Backend microservices, thiết kế DB và Frontend hiện đại.",
+    "searchPlaceholder": "Tìm kỹ năng (VD: NestJS, Java)...",
+    "coreBadge": "Core",
+    "philosophy": "Tập trung vào giải quyết bài toán thực tế của sản phẩm thay vì chạy theo công nghệ phong trào. Luôn coi trọng Clean Code, Type Safety, TDD và thiết kế hệ thống có khả năng mở rộng."
+  },
+  "Blog": {
+    "tag": "Chia Sẻ Kỹ Thuật & Bài Viết",
+    "heading": "Bài Viết Kỹ Thuật",
+    "description": "Các bài viết phân tích kỹ thuật về System Design, NestJS, PostgreSQL optimization và quy chuẩn lập trình Fullstack.",
+    "featuredBadge": "Featured",
+    "readArticle": "Đọc bài",
+    "closeArticle": "Đóng Bài Viết",
+    "viewFullPage": "Xem Toàn Bộ Bài Viết",
+    "writtenBy": "Viết bởi"
+  },
+  "Contact": {
+    "tag": "Kết Nối & Hợp Tác",
+    "heading": "Liên Hệ Trực Tiếp",
+    "description": "Bạn đang tìm kiếm Fullstack Developer cho dự án mới, hoặc muốn trao đổi công việc? Hãy gửi tin nhắn cho tôi.",
+    "contactDetailsHeading": "Thông Tin Liên Hệ",
+    "emailLabel": "Email",
+    "locationLabel": "Location",
+    "phoneLabel": "Phone",
+    "phoneValue": "0839 404 831",
+    "socialHeading": "Mạng Xã Hội Professional",
+    "formNameLabel": "Họ và tên *",
+    "formEmailLabel": "Email liên hệ *",
+    "formSubjectLabel": "Chủ đề",
+    "formSubjectPlaceholder": "Trao đổi cơ hội dự án Backend...",
+    "formMessageLabel": "Nội dung tin nhắn *",
+    "formMessagePlaceholder": "Mô tả ngắn gọn về nhu cầu dự án hoặc câu hỏi của bạn...",
+    "formSubmit": "Gửi Tin Nhắn",
+    "formSubmitting": "Đang gửi...",
+    "formError": "Gửi thất bại, vui lòng thử lại sau.",
+    "successHeading": "Cảm Ơn Bạn Đã Gửi Tin Nhắn!",
+    "successMessage": "Tôi sẽ phản hồi qua email của bạn trong vòng 24 giờ tới.",
+    "sendAnother": "Gửi tin nhắn khác"
+  },
+  "Footer": {
+    "tagline": "Built with Next.js/React, TypeScript & Tailwind CSS • Minimalist Flat Design",
+    "backToTop": "Top"
+  }
+}
