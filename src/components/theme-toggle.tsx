@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 
 export function ThemeToggle() {
   const t = useTranslations("Nav");
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
 
   useLayoutEffect(() => {
     // Syncs with the inline theme script in layout.tsx that sets `dark` pre-hydration; avoids SSR/CSR mismatch.
