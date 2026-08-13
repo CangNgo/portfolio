@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio (Next.js)
+
+Personal portfolio built with Next.js App Router, TypeScript, Tailwind CSS v4, and `next-intl` (Vietnamese/English).
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). URLs are locale-prefixed (`/vi`, `/en`), defaulting to `vi`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Other scripts:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build   # production build
+npm run start   # run the production build
+npm run lint    # ESLint
+npm run format  # Prettier --write
+```
 
-## Learn More
+## Editing content
 
-To learn more about Next.js, take a look at the following resources:
+**All content lives in JSON files under `src/data/` — no code changes needed to update profile info, projects, skills, blog posts, or work experience.**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| File | Powers |
+|---|---|
+| `src/data/profile.json` | Name, role, bio, contact links, resume URL |
+| `src/data/projects.json` | Case studies (problem, architecture, tech stack, results) |
+| `src/data/skills.json` | Skill categories and items |
+| `src/data/blog.json` | Blog posts |
+| `src/data/experience.json` | Work experience timeline |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Shape of each file is defined in `src/lib/types.ts`.
 
-## Deploy on Vercel
+Fields that hold user-facing prose (titles, descriptions, bios, etc.) are bilingual objects: `{ "vi": "...", "en": "..." }`. Edit both languages when adding or changing content.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Data is read at build/request time via `src/lib/data.ts` (server-only, `fs/promises` + `React.cache`) — restart `next dev` after editing a JSON file to see changes, or just rebuild for production.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### UI chrome text (buttons, labels, headings)
+
+Short, fixed UI strings (nav labels, button text, section headings) are separate from content and live in `messages/vi.json` / `messages/en.json` (`next-intl` message catalogs). Edit these to change UI copy without touching data.
+
+### Resume
+
+`profile.json`'s `resumeUrl` points to `/resume.pdf`. Place the actual PDF at `public/resume.pdf`.
+
+## Architecture notes
+
+- **Server Components by default.** Each section (`src/components/sections/*`) is a thin async Server Component that fetches JSON via `lib/data.ts` and passes it as props to a co-located `*-client.tsx` Client Component that owns interactivity/animation. Only mark a component `"use client"` when it needs browser APIs, state, or event handlers.
+- **Dynamic routes**: `/[locale]/projects/[id]` and `/[locale]/blog/[slug]` are statically generated via `generateStaticParams`, with per-page `generateMetadata`.
+- **Contact form** posts to `/api/contact`, validated with `zod`, sent via [Resend](https://resend.com). Requires `RESEND_API_KEY` and `CONTACT_TO_EMAIL` in `.env.local` (see `.env.local` — never commit this file or paste the key in chat/logs).
+- **Images**: `next/image` is used for project thumbnails; allowed remote hosts are configured in `next.config.ts` (`images.remotePatterns`) — add new hosts there if you use images from elsewhere.
+# portfolio
