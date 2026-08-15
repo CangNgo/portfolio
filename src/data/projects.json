@@ -129,7 +129,7 @@
   {
     "id": "trieu-an-mobile",
     "title": {
-      "vi": "BV Triều An — Ứng Dụng Y Tế Di Động",
+      "vi": "BV Triều An — Ứng Dụng Y Tế Di Động (OTP 123456)",
       "en": "Trieu An Hospital — Healthcare Mobile App"
     },
     "tagline": {
@@ -137,7 +137,7 @@
       "en": "A cross-platform (iOS/Android) hospital app featuring Stripe hospital-fee payments, Vietnamese ID-card NFC chip reading via a custom native module, ID QR scanning, and Firebase push notifications."
     },
     "featured": true,
-    "category": "Mobile App (OTP 123456)",
+    "category": "Mobile App",
     "thumbnailUrl": "https://res.cloudinary.com/dwf2vqohm/image/upload/v1786797269/media_4c27f636-33af-4d8b-8940-dc2c727aaf42_1786797224566_214223737948144677_2031845161217315310_12e0046570f0cd97b685e08effb204ab.png",
     "period": {
       "vi": "03/2026 - Hiện tại",
