@@ -50,6 +50,7 @@
     "techHeading": "3. Tech Stack",
     "resultsHeading": "4. Results & Trade-offs",
     "metricsLabel": "Results & Key Metrics:",
+    "featuresLabel": "Key Features:",
     "tradeoffsLabel": "Engineering Trade-offs:",
     "liveDemo": "Live Demo",
     "githubRepo": "GitHub Repo",

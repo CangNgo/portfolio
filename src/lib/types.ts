@@ -42,7 +42,12 @@ export interface Project {
   title: LocalizedText;
   tagline: LocalizedText;
   featured: boolean;
-  category: "Backend Heavy" | "Fullstack Web" | "Real-time Systems" | "Microservices";
+  category:
+    | "Backend Heavy"
+    | "Fullstack Web"
+    | "Real-time Systems"
+    | "Microservices"
+    | "Mobile App";
   thumbnailUrl: string;
   demoUrl?: string;
   githubUrl?: string;
@@ -50,6 +55,7 @@ export interface Project {
   role: LocalizedText;
   problem: LocalizedText;
   architectureSolution: LocalizedText;
+  keyFeatures?: LocalizedList;
   systemArchitecture?: SystemArchitecture;
   techStack: string[];
   resultsAndTradeoffs: {

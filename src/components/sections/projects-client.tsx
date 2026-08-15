@@ -14,6 +14,7 @@ const CATEGORIES = [
   "Fullstack Web",
   "Real-time Systems",
   "Microservices",
+  "Mobile App",
 ] as const;
 
 export function ProjectsClient({ projects }: { projects: Project[] }) {

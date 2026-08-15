@@ -50,6 +50,7 @@
     "techHeading": "3. Công Nghệ Sử Dụng (Tech Stack)",
     "resultsHeading": "4. Kết Quả & Trade-off Cân Nhắc",
     "metricsLabel": "Kết quả & Chỉ số ấn tượng:",
+    "featuresLabel": "Tính Năng Chính:",
     "tradeoffsLabel": "Trade-offs Kỹ Thuật Đã Đánh Đổi:",
     "liveDemo": "Demo Trực Tiếp",
     "githubRepo": "Mã Nguồn Repo",

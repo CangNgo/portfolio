@@ -11,7 +11,7 @@
     },
     "featured": true,
     "category": "Fullstack Web",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=1200&q=80",
+    "thumbnailUrl": "https://res.cloudinary.com/dwf2vqohm/image/upload/v1786796783/media_117f58ae-f307-42bb-849b-6b5142147cfb_background-login3.png",
     "demoUrl": "https://flowzone.vercel.app",
     "githubUrl": "https://github.com/CangNgo/Fsocial",
     "period": {
@@ -122,6 +122,173 @@
         {
           "vi": "Ban đầu chọn kiến trúc microservices nhưng nhận thấy chi phí vận hành và độ phức tạp không phù hợp với quy mô dự án cá nhân, nên chuyển về một backend duy nhất để tập trung phát triển tính năng cốt lõi của mạng xã hội, đổi lại giảm khả năng scale độc lập từng phần so với microservices.",
           "en": "Initially chose a microservices architecture but found the operational cost and complexity unsuited to a solo project's scale, so migrated to a single backend to focus on delivering core social platform features, trading off the ability to scale individual parts independently."
+        }
+      ]
+    }
+  },
+  {
+    "id": "trieu-an-mobile",
+    "title": {
+      "vi": "BV Triều An — Ứng Dụng Y Tế Di Động",
+      "en": "Trieu An Hospital — Healthcare Mobile App"
+    },
+    "tagline": {
+      "vi": "Ứng dụng bệnh viện đa nền tảng (iOS/Android) với thanh toán viện phí Stripe, đọc chip NFC căn cước công dân qua native module tự viết, quét QR CCCD và push notification Firebase.",
+      "en": "A cross-platform (iOS/Android) hospital app featuring Stripe hospital-fee payments, Vietnamese ID-card NFC chip reading via a custom native module, ID QR scanning, and Firebase push notifications."
+    },
+    "featured": true,
+    "category": "Mobile App (OTP 123456)",
+    "thumbnailUrl": "https://res.cloudinary.com/dwf2vqohm/image/upload/v1786797269/media_4c27f636-33af-4d8b-8940-dc2c727aaf42_1786797224566_214223737948144677_2031845161217315310_12e0046570f0cd97b685e08effb204ab.png",
+    "period": {
+      "vi": "03/2026 - Hiện tại",
+      "en": "03/2026 - Present"
+    },
+    "role": {
+      "vi": "Mobile Developer (React Native) — làm việc theo team",
+      "en": "Mobile Developer (React Native) — team project"
+    },
+    "problem": {
+      "vi": "Bệnh nhân phải xếp hàng trực tiếp để đăng ký khám, khai báo thông tin cá nhân bằng tay và thanh toán viện phí tại quầy. Việc nhập tay thông tin căn cước dễ sai sót, quy trình xác thực danh tính chậm, và bệnh nhân không nhận được cập nhật trạng thái lịch khám theo thời gian thực. Đội ngũ cần một ứng dụng duy nhất chạy trên cả iOS và Android, đáp ứng yêu cầu bảo mật dữ liệu y tế và xác thực danh tính theo chuẩn của căn cước công dân gắn chip.",
+      "en": "Patients had to queue in person to register for consultations, fill in personal details by hand, and settle hospital fees at the counter. Manual entry of ID information was error-prone, identity verification was slow, and patients received no real-time updates on their appointment status. The team needed a single application running on both iOS and Android that met healthcare data security requirements and supported identity verification against Vietnam's chip-based national ID card."
+    },
+    "architectureSolution": {
+      "vi": "Xây dựng ứng dụng trên Expo SDK 55 + React Native 0.83 theo hướng development build để nhúng được native code, điều hướng bằng Expo Router chia theo nhóm quyền (public, patient, doctor, admin). Codebase tổ chức theo feature-based architecture, tách riêng tầng services theo domain với pattern service + keys + mappers + registry để chuẩn hóa gọi API và cache key. Server state quản lý bằng TanStack Query, client state bằng Zustand. Tôi đảm nhận ba mảng tích hợp native: thanh toán viện phí qua Stripe PaymentSheet, đọc chip căn cước công dân bằng native module NFC tự viết cho cả Kotlin và Swift, và push notification qua Firebase Cloud Messaging. Ứng dụng build và phát hành qua EAS với các config plugin tự viết.",
+      "en": "Built on Expo SDK 55 + React Native 0.83 using development builds so native code could be embedded, with Expo Router handling navigation split by permission group (public, patient, doctor, admin). The codebase follows a feature-based architecture with a separate domain-oriented services layer using a service + keys + mappers + registry pattern to standardize API calls and cache keys. Server state is managed with TanStack Query, client state with Zustand. I owned three native integrations: hospital-fee payments via the Stripe PaymentSheet, national ID chip reading through a custom NFC native module written in both Kotlin and Swift, and push notifications over Firebase Cloud Messaging. The app is built and released through EAS with custom config plugins."
+    },
+    "keyFeatures": {
+      "vi": [
+        "Thanh toán viện phí trực tuyến qua Stripe PaymentSheet, hỗ trợ Google Pay",
+        "Đọc chip NFC căn cước công dân bằng native module tự viết (Kotlin + Swift)",
+        "Quét mã QR căn cước để tự động điền hồ sơ đăng ký",
+        "Push notification thời gian thực qua Firebase Cloud Messaging",
+        "Đặt lịch khám theo chuyên khoa, bác sĩ và khung giờ",
+        "Tra cứu lịch khám và lịch sử thanh toán có phân trang",
+        "Xác thực tài khoản qua OTP, quên và đặt lại mật khẩu",
+        "Quản lý hồ sơ cá nhân, đổi mật khẩu, tùy chỉnh cỡ chữ và giao diện sáng/tối",
+        "Đa ngôn ngữ Việt - Anh",
+        "Phân quyền giao diện theo vai trò: bệnh nhân, bác sĩ, quản trị"
+      ],
+      "en": [
+        "Online hospital-fee payments via the Stripe PaymentSheet, with Google Pay support",
+        "National ID NFC chip reading through a custom native module (Kotlin + Swift)",
+        "ID card QR scanning to auto-fill the registration form",
+        "Real-time push notifications over Firebase Cloud Messaging",
+        "Appointment booking by specialty, doctor, and time slot",
+        "Appointment lookup and paginated payment history",
+        "Account verification via OTP, plus forgot and reset password flows",
+        "Profile management, password changes, font-size preferences, and light/dark theming",
+        "Vietnamese - English localization",
+        "Role-based UI for patients, doctors, and administrators"
+      ]
+    },
+    "systemArchitecture": {
+      "summary": {
+        "vi": "Mobile App (Expo/React Native) -> Backend bệnh viện (REST API) cho nghiệp vụ khám chữa bệnh; song song gọi Stripe qua serverless để tạo PaymentIntent, đọc chip CCCD offline bằng native module NFC, và nhận push notification từ Firebase Cloud Messaging.",
+        "en": "Mobile App (Expo/React Native) -> hospital backend (REST API) for clinical workflows; in parallel it calls Stripe through a serverless function to create PaymentIntents, reads the ID chip offline via a native NFC module, and receives push notifications from Firebase Cloud Messaging."
+      },
+      "nodes": [
+        {
+          "id": "mobile",
+          "label": "Mobile App",
+          "sublabel": "Expo / React Native",
+          "type": "client",
+          "description": {
+            "vi": "Ứng dụng iOS & Android cho bệnh nhân: đặt lịch, tra cứu, thanh toán",
+            "en": "iOS & Android patient app: booking, lookup, payments"
+          }
+        },
+        {
+          "id": "nfc",
+          "label": "CCCD Reader",
+          "sublabel": "Native Module (Kotlin/Swift)",
+          "type": "service",
+          "description": {
+            "vi": "Đọc chip căn cước qua NFC bằng giao thức PACE/CAN, parse DG1/DG2/DG11/DG13",
+            "en": "Reads the ID chip over NFC using the PACE/CAN protocol, parsing DG1/DG2/DG11/DG13"
+          }
+        },
+        {
+          "id": "backend",
+          "label": "Hospital Backend",
+          "sublabel": "REST API",
+          "type": "service",
+          "description": {
+            "vi": "Xử lý nghiệp vụ: tài khoản, lịch khám, bác sĩ, lịch sử thanh toán",
+            "en": "Handles accounts, appointments, doctors, and payment history"
+          }
+        },
+        {
+          "id": "stripe",
+          "label": "Stripe",
+          "sublabel": "Payment Gateway",
+          "type": "external",
+          "description": {
+            "vi": "Tạo PaymentIntent phía server, thanh toán viện phí qua PaymentSheet & Google Pay",
+            "en": "Creates PaymentIntents server-side; hospital fees paid via PaymentSheet & Google Pay"
+          }
+        },
+        {
+          "id": "fcm",
+          "label": "Firebase Cloud Messaging",
+          "sublabel": "Push Notifications",
+          "type": "external",
+          "description": {
+            "vi": "Gửi thông báo trạng thái lịch khám và thanh toán tới thiết bị",
+            "en": "Delivers appointment and payment status notifications to devices"
+          }
+        }
+      ],
+      "links": [
+        { "from": "mobile", "to": "nfc", "label": "Tap to read", "type": "sync" },
+        { "from": "mobile", "to": "backend", "label": "HTTPS / REST", "type": "sync" },
+        { "from": "mobile", "to": "stripe", "label": "PaymentSheet", "type": "sync" },
+        { "from": "backend", "to": "stripe", "label": "Create PaymentIntent", "type": "sync" },
+        { "from": "fcm", "to": "mobile", "label": "Push Message", "type": "async" }
+      ]
+    },
+    "techStack": [
+      "React Native",
+      "Expo SDK 55",
+      "TypeScript",
+      "Expo Router",
+      "TanStack Query",
+      "Zustand",
+      "Stripe",
+      "NFC (PACE/CAN)",
+      "Kotlin",
+      "Swift",
+      "Firebase Cloud Messaging",
+      "React Hook Form",
+      "Yup",
+      "FlashList",
+      "Reanimated",
+      "EAS Build"
+    ],
+    "resultsAndTradeoffs": {
+      "metrics": {
+        "vi": [
+          "Phát hành tới phiên bản 1.5.0 cho cả iOS và Android từ một codebase duy nhất, với CI build tự động qua EAS",
+          "Rút ngắn đăng ký tài khoản từ nhập tay toàn bộ thông tin xuống một thao tác chạm thẻ CCCD hoặc quét QR, loại bỏ sai sót nhập liệu",
+          "Tích hợp thanh toán viện phí trực tuyến qua Stripe PaymentSheet kèm Google Pay, thay cho việc xếp hàng thanh toán tại quầy",
+          "Tự viết native module đọc chip CCCD cho cả hai nền tảng, thay vì phụ thuộc thư viện bên thứ ba không hỗ trợ chuẩn thẻ Việt Nam",
+          "Cấu trúc feature-based với tầng service chuẩn hóa (service/keys/mappers/registry), giúp nhiều thành viên phát triển song song không đụng độ"
+        ],
+        "en": [
+          "Shipped up to version 1.5.0 on both iOS and Android from a single codebase, with automated CI builds through EAS",
+          "Cut account registration from typing every field by hand down to a single ID-card tap or QR scan, eliminating data-entry errors",
+          "Integrated online hospital-fee payments via Stripe PaymentSheet with Google Pay, replacing in-person counter queues",
+          "Authored a custom native ID-chip reading module for both platforms instead of depending on third-party libraries that don't support the Vietnamese card standard",
+          "Feature-based structure with a standardized service layer (service/keys/mappers/registry) let several team members develop in parallel without collisions"
+        ]
+      },
+      "tradeoffs": [
+        {
+          "vi": "Đọc chip NFC bắt buộc phải viết native module riêng cho Kotlin và Swift, đồng nghĩa ứng dụng không chạy được trên Expo Go và phải dùng development build — chi phí thiết lập môi trường cho team cao hơn, đổi lại kiểm soát hoàn toàn giao thức PACE/CAN và cách parse data group theo đúng chuẩn thẻ Việt Nam.",
+          "en": "NFC chip reading required writing separate native modules in Kotlin and Swift, which means the app cannot run on Expo Go and requires development builds — a higher environment-setup cost for the team, in exchange for full control over the PACE/CAN protocol and data-group parsing matching the Vietnamese card standard."
+        },
+        {
+          "vi": "PaymentIntent được tạo qua một serverless function tách rời thay vì gọi thẳng backend bệnh viện, giúp giữ secret key của Stripe ngoài ứng dụng và triển khai nhanh, nhưng phải quản lý thêm một điểm cấu hình (EXPO_PUBLIC_PAYMENT_API_URL) và một dịch vụ nữa trong hệ thống.",
+          "en": "PaymentIntents are created through a separate serverless function rather than directly on the hospital backend, keeping the Stripe secret key out of the app and enabling fast deployment, but adding one more configuration point (EXPO_PUBLIC_PAYMENT_API_URL) and one more service to operate."
         }
       ]
     }

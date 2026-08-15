@@ -9,6 +9,7 @@ import {
   Layers,
   Calendar,
   UserCheck,
+  Sparkles,
 } from "lucide-react";
 import { getProjects, getProjectBySlug, getProfile } from "@/lib/data";
 import { ArchitectureDiagram } from "@/components/architecture-diagram";
@@ -110,6 +111,27 @@ export default async function ProjectPage({
           <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
             {project.architectureSolution[lang]}
           </p>
+
+          {project.keyFeatures && (
+            <div className="pt-1">
+              <span className="text-xs font-mono font-semibold text-teal-700 dark:text-teal-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                <Sparkles className="w-4 h-4" />
+                {t("featuresLabel")}
+              </span>
+              <ul className="grid sm:grid-cols-2 gap-2">
+                {project.keyFeatures[lang].map((feature, idx) => (
+                  <li
+                    key={idx}
+                    className="flex items-start gap-2 p-3 rounded-lg bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200/80 dark:border-zinc-800/80 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300"
+                  >
+                    <CheckCircle2 className="w-4 h-4 text-teal-500 shrink-0 mt-0.5" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           {project.systemArchitecture && (
             <ArchitectureDiagram architecture={project.systemArchitecture} />
           )}
