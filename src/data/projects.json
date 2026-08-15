@@ -1,109 +1,127 @@
 [
   {
-    "id": "fsocial",
+    "id": "flowzone",
     "title": {
-      "vi": "Fsocial — Nền Tảng Mạng Xã Hội",
-      "en": "Fsocial — Social Media Platform"
+      "vi": "Flowzone — Nền Tảng Mạng Xã Hội",
+      "en": "Flowzone — Social Media Platform"
     },
     "tagline": {
-      "vi": "Nền tảng mạng xã hội với backend microservices, giao tiếp bất đồng bộ qua RabbitMQ và triển khai trên AWS.",
-      "en": "A social media platform with a microservices backend, asynchronous messaging via RabbitMQ, and AWS deployment."
+      "vi": "Nền tảng mạng xã hội với backend Spring Boot, chat thời gian thực, giao tiếp bất đồng bộ qua RabbitMQ và Redis cho tải cao.",
+      "en": "A social media platform with a Spring Boot backend, real-time chat, asynchronous messaging via RabbitMQ, and Redis for high-load handling."
     },
     "featured": true,
-    "category": "Backend Heavy",
+    "category": "Fullstack Web",
     "thumbnailUrl": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=1200&q=80",
-    "demoUrl": "https://www.fsocial.online",
+    "demoUrl": "https://flowzone.vercel.app",
     "githubUrl": "https://github.com/CangNgo/Fsocial",
-    "period": "12/2026 - Hiện tại",
+    "period": {
+      "vi": "12/2025 - Hiện tại",
+      "en": "12/2025 - Present"
+    },
     "role": {
-      "vi": "Back End Developer & DevOps",
-      "en": "Back End Developer & DevOps"
+      "vi": "Fullstack Developer",
+      "en": "Fullstack Developer"
     },
     "problem": {
-      "vi": "Xây dựng một nền tảng mạng xã hội từ đầu, một mình, đòi hỏi backend phải chịu được các thao tác tương tác thời gian thực (đăng bài, tương tác) trong khi vẫn giữ được khả năng mở rộng và chi phí hạ tầng hợp lý cho một dự án cá nhân.",
-      "en": "Building a social media platform solo from scratch required a backend that could handle real-time interaction workloads (posting, engagement) while staying scalable and cost-efficient to run as a personal project."
+      "vi": "Xây dựng một nền tảng mạng xã hội từ đầu, một mình, cần xử lý các nghiệp vụ cốt lõi như đăng nhập Google, đăng bài, newsfeed, bình luận, reaction, chat thời gian thực, hồ sơ người dùng và kiểm duyệt nội dung vi phạm chính sách — tất cả dưới khối lượng tương tác thời gian thực, trong khi vẫn giữ chi phí hạ tầng và độ phức tạp vận hành phù hợp cho một dự án cá nhân.",
+      "en": "Building a social media platform solo from scratch required handling core features such as Google login, posts, newsfeed, comments, reactions, real-time chat, user profiles, and content moderation for policy violations — all under real-time interaction workloads, while keeping infrastructure cost and operational complexity reasonable for a personal project."
     },
     "architectureSolution": {
-      "vi": "Thiết kế backend theo hướng microservices với Spring Boot và Spring Cloud, tách các service theo domain nghiệp vụ. Sử dụng RabbitMQ cho giao tiếp bất đồng bộ giữa các service, giảm coupling và tăng khả năng chịu lỗi. Áp dụng Redis caching để giảm tải cho database ở các truy vấn đọc thường xuyên. Đóng gói toàn bộ hệ thống bằng Docker và triển khai trên AWS.",
-      "en": "Designed a microservices backend with Spring Boot and Spring Cloud, splitting services by business domain. Used RabbitMQ for asynchronous inter-service communication to reduce coupling and improve fault tolerance. Applied Redis caching to offload frequent read queries from the database. Containerized the whole system with Docker and deployed it on AWS."
+      "vi": "Thiết kế backend với Spring Boot, tổ chức code theo module nghiệp vụ (bài viết, người dùng, tương tác, chat, kiểm duyệt) để dễ bảo trì và mở rộng trong một codebase duy nhất. Xác thực qua Google OAuth2. Dùng RabbitMQ để xử lý bất đồng bộ các tác vụ nặng và không cần phản hồi ngay như gửi thông báo, cập nhật newsfeed, giúp API chính phản hồi nhanh hơn. Áp dụng Redis cho các tính năng tốn tài nguyên như theo dõi trạng thái online và caching các truy vấn đọc thường xuyên (bảng tin, số lượt thích/bình luận) để giảm tải database. Đóng gói bằng Docker, frontend NextJS deploy trên Vercel và backend trên Render/AWS.",
+      "en": "Designed the backend with Spring Boot, organizing code by business module (posts, users, engagement, chat, moderation) for easier maintenance and scaling within a single codebase. Authentication via Google OAuth2. Used RabbitMQ to process heavy, non-blocking tasks asynchronously such as sending notifications and updating the newsfeed, keeping the main API responsive. Applied Redis for resource-intensive features like online status tracking and caching of frequent read queries (newsfeed, like/comment counts) to reduce database load. Containerized with Docker, with the NextJS frontend deployed on Vercel and the backend on Render/AWS."
     },
     "systemArchitecture": {
       "summary": {
-        "vi": "Client -> Spring Cloud API Gateway -> Microservices (Spring Boot) -> RabbitMQ (async events) -> Redis Cache -> Database, toàn bộ chạy trên Docker container trên AWS.",
-        "en": "Client -> Spring Cloud API Gateway -> Microservices (Spring Boot) -> RabbitMQ (async events) -> Redis Cache -> Database, all running in Docker containers on AWS."
+        "vi": "Client -> Backend (Spring Boot) -> RabbitMQ (xử lý bất đồng bộ: thông báo, newsfeed) -> Redis Cache -> Database, toàn bộ chạy trên Docker container trên AWS.",
+        "en": "Client -> Backend (Spring Boot) -> RabbitMQ (async processing: notifications, newsfeed) -> Redis Cache -> Database, all running in Docker containers on AWS."
       },
-      "nodes": [
+      "nodes": [  
         {
           "id": "client",
           "label": "Client App",
           "sublabel": "Web",
           "type": "client",
-          "description": "Giao diện người dùng gửi request tới hệ thống"
+          "description": {
+            "vi": "Giao diện người dùng gửi request tới hệ thống",
+            "en": "User interface that sends requests to the system"
+          }
         },
         {
-          "id": "gateway",
-          "label": "API Gateway",
-          "sublabel": "Spring Cloud Gateway",
-          "type": "gateway",
-          "description": "Định tuyến request tới các microservice tương ứng"
-        },
-        {
-          "id": "services",
-          "label": "Core Services",
-          "sublabel": "Spring Boot Microservices",
+          "id": "backend",
+          "label": "Backend App",
+          "sublabel": "Spring Boot",
           "type": "service",
-          "description": "Xử lý logic nghiệp vụ chính của nền tảng"
+          "description": {
+            "vi": "Xử lý toàn bộ nghiệp vụ: bài viết, newsfeed, tương tác, thông báo",
+            "en": "Handles all core business logic: posts, newsfeed, engagement, notifications"
+          }
         },
         {
           "id": "rabbitmq",
           "label": "RabbitMQ",
           "sublabel": "Message Broker",
           "type": "broker",
-          "description": "Giao tiếp bất đồng bộ giữa các service"
+          "description": {
+            "vi": "Xử lý bất đồng bộ: gửi thông báo, cập nhật newsfeed",
+            "en": "Asynchronous processing: sending notifications, updating the newsfeed"
+          }
         },
         {
           "id": "redis",
           "label": "Redis",
           "sublabel": "Cache Layer",
           "type": "cache",
-          "description": "Giảm tải truy vấn đọc thường xuyên"
+          "description": {
+            "vi": "Giảm tải truy vấn đọc thường xuyên",
+            "en": "Offloads frequent read queries"
+          }
         },
         {
           "id": "database",
-          "label": "Database",
+          "label": "PostgreSQL",
           "sublabel": "Persistent Storage",
           "type": "database",
-          "description": "Lưu trữ dữ liệu người dùng và nội dung"
+          "description": {
+            "vi": "Lưu trữ dữ liệu người dùng và nội dung",
+            "en": "Stores user and content data"
+          }
         }
       ],
       "links": [
-        { "from": "client", "to": "gateway", "label": "HTTPS", "type": "sync" },
-        { "from": "gateway", "to": "services", "label": "Route Request", "type": "sync" },
+        { "from": "client", "to": "backend", "label": "HTTPS", "type": "sync" },
         {
-          "from": "services",
+          "from": "backend",
           "to": "rabbitmq",
           "label": "Publish Event",
           "type": "async"
         },
         {
-          "from": "services",
+          "from": "backend",
           "to": "redis",
           "label": "Cache Read/Write",
           "type": "cache"
         },
-        { "from": "services", "to": "database", "label": "Persist Data", "type": "sync" }
+        { "from": "backend", "to": "database", "label": "Persist Data", "type": "sync" }
       ]
     },
-    "techStack": ["Spring Boot", "Spring Cloud", "RabbitMQ", "Redis", "Docker", "AWS"],
+    "techStack": ["Spring Boot", "NextJS", "PostgreSQL", "RabbitMQ", "Redis", "Zustand", "Tanstack", "Docker", "Vercel", "Render", "AWS"],
     "resultsAndTradeoffs": {
-      "metrics": [
-        "Triển khai và vận hành thành công backend microservices hoàn chỉnh trên AWS",
-        "Tách biệt rõ ràng các service nghiệp vụ, dễ bảo trì và mở rộng độc lập"
-      ],
+      "metrics": {
+        "vi": [
+          "Triển khai và vận hành thành công backend hoàn chỉnh trên AWS, phục vụ đăng bài, newsfeed, tương tác và thông báo",
+          "Tổ chức code theo module nghiệp vụ rõ ràng, dễ bảo trì trong một codebase duy nhất",
+          "Giảm tải database nhờ Redis caching cho các truy vấn bảng tin và số liệu tương tác (lượt thích, bình luận)"
+        ],
+        "en": [
+          "Successfully deployed and operated a complete backend on AWS, powering posting, newsfeed, engagement, and notifications",
+          "Organized code into clear business modules, easy to maintain within a single codebase",
+          "Reduced database load via Redis caching for newsfeed queries and engagement counts (likes, comments)"
+        ]
+      },
       "tradeoffs": [
         {
-          "vi": "Chọn kiến trúc microservices ngay từ đầu cho một dự án cá nhân giúp học và áp dụng thực tế các pattern hệ thống phân tán, đổi lại tăng độ phức tạp vận hành so với một monolith đơn giản.",
-          "en": "Chose a microservices architecture from day one for a solo project to practice real-world distributed system patterns, trading off added operational complexity compared to a simple monolith."
+          "vi": "Ban đầu chọn kiến trúc microservices nhưng nhận thấy chi phí vận hành và độ phức tạp không phù hợp với quy mô dự án cá nhân, nên chuyển về một backend duy nhất để tập trung phát triển tính năng cốt lõi của mạng xã hội, đổi lại giảm khả năng scale độc lập từng phần so với microservices.",
+          "en": "Initially chose a microservices architecture but found the operational cost and complexity unsuited to a solo project's scale, so migrated to a single backend to focus on delivering core social platform features, trading off the ability to scale individual parts independently."
         }
       ]
     }

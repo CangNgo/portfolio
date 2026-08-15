@@ -10,7 +10,7 @@ export interface Profile {
   location: string;
   github: string;
   linkedin: string;
-  x: string;
+  x?: string;
   resumeUrl: string;
   status: LocalizedText;
   bio: LocalizedText;
@@ -21,7 +21,7 @@ export interface ArchitectureNode {
   label: string;
   sublabel?: string;
   type: "client" | "gateway" | "service" | "database" | "cache" | "broker" | "external";
-  description: string;
+  description: LocalizedText;
 }
 
 export interface ArchitectureLink {
@@ -46,14 +46,14 @@ export interface Project {
   thumbnailUrl: string;
   demoUrl?: string;
   githubUrl?: string;
-  period: string;
+  period: LocalizedText;
   role: LocalizedText;
   problem: LocalizedText;
   architectureSolution: LocalizedText;
   systemArchitecture?: SystemArchitecture;
   techStack: string[];
   resultsAndTradeoffs: {
-    metrics: string[];
+    metrics: LocalizedList;
     tradeoffs: LocalizedText[];
   };
 }

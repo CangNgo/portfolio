@@ -62,7 +62,7 @@ export default async function ProjectPage({
           </span>
           <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400 flex items-center gap-1">
             <Calendar className="w-3.5 h-3.5" />
-            {project.period}
+            {project.period[lang]}
           </span>
         </div>
 
@@ -143,7 +143,7 @@ export default async function ProjectPage({
               {t("metricsLabel")}
             </span>
             <ul className="space-y-2">
-              {project.resultsAndTradeoffs.metrics.map((metric, idx) => (
+              {project.resultsAndTradeoffs.metrics[lang].map((metric, idx) => (
                 <li
                   key={idx}
                   className="flex items-start gap-2 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300"

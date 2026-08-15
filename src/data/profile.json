@@ -11,7 +11,7 @@
     "en": "Open for Fullstack Developer opportunities"
   },
   "bio": {
-    "vi": "Fullstack Developer với kinh nghiệm thực chiến xây dựng RESTful API và triển khai ứng dụng web hoàn chỉnh cho khách hàng freelance. Có kinh nghiệm tối ưu cơ sở dữ liệu, caching với Redis và kiến trúc hướng message với RabbitMQ.",
-    "en": "Fullstack Developer with hands-on experience building RESTful APIs and delivering end-to-end web applications for freelance clients. Experienced in database optimization, caching with Redis, and message-driven architecture with RabbitMQ."
+    "vi": "Fullstack Developer với kinh nghiệm thực chiến xây dựng RESTful API bằng NestJS và phát triển giao diện người dùng với ReactJS/NextJS. Chủ động tìm tòi các giải pháp kỹ thuật hiệu quả và tối ưu hiệu năng hệ thống. Mong muốn đóng góp vào các dự án quy mô lớn để tạo ra giá trị thực tế, đồng thời rèn luyện tư duy thiết kế hệ thống.",
+    "en": "Fullstack Developer with hands-on experience building RESTful APIs with NestJS and user interfaces with ReactJS/NextJS. Proactive in exploring effective technical solutions and optimizing system performance. Eager to contribute to large-scale projects where I can deliver value while sharpening my system design thinking."
   }
 }

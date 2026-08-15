@@ -9,7 +9,7 @@ export function ThemeToggle() {
   const [isDark, setIsDark] = useState(false);
 
   useLayoutEffect(() => {
-    // Syncs with the inline theme script in layout.tsx that sets `dark` pre-hydration; avoids SSR/CSR mismatch.
+    // Syncs with the `dark` class the server sets from the theme cookie; avoids SSR/CSR mismatch.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsDark(document.documentElement.classList.contains("dark"));
   }, []);
@@ -18,7 +18,7 @@ export function ThemeToggle() {
     const next = !isDark;
     setIsDark(next);
     document.documentElement.classList.toggle("dark", next);
-    localStorage.setItem("theme", next ? "dark" : "light");
+    document.cookie = `theme=${next ? "dark" : "light"}; path=/; max-age=31536000; samesite=lax`;
   }
 
   return (

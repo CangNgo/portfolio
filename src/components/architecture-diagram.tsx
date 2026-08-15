@@ -115,7 +115,7 @@ export function ArchitectureDiagram({
                 <p className="text-xs text-zinc-400 mb-3">{selectedNode.sublabel}</p>
               )}
               <p className="text-sm text-zinc-600 dark:text-zinc-300 mb-6">
-                {selectedNode.description}
+                {selectedNode.description[locale]}
               </p>
               <p className="text-xs text-zinc-400 border-t border-zinc-100 dark:border-zinc-800 pt-3">
                 {t("flowModelVersion")} ·{" "}

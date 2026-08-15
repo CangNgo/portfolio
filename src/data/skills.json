@@ -4,7 +4,7 @@
     "skills": [
       {
         "name": "Java (Spring Boot)",
-        "level": "Proficient",
+        "level": "Experienced",
         "experienceYears": "Kinh nghiệm thực tế",
         "highlight": true,
         "description": {
@@ -14,27 +14,47 @@
       },
       {
         "name": "NestJS",
-        "level": "Proficient",
+        "level": "Experienced",
         "experienceYears": "Kinh nghiệm thực tế",
-        "highlight": true,
+        "highlight": false,
         "description": {
           "vi": "Xây dựng RESTful API và cấu trúc backend module hóa với TypeScript.",
           "en": "Building RESTful APIs and modular backend structures with TypeScript."
         }
       },
       {
-        "name": "RabbitMQ",
-        "level": "Proficient",
+        "name": "Express.js",
+        "level": "Experienced",
         "experienceYears": "Kinh nghiệm thực tế",
-        "highlight": true,
+        "highlight": false,
+        "description": {
+          "vi": "Xây dựng RESTful API nhẹ với Node.js cho các service quy mô nhỏ.",
+          "en": "Building lightweight RESTful APIs with Node.js for small-scale services."
+        }
+      },
+      {
+        "name": "RabbitMQ",
+        "level": "Experienced",
+        "experienceYears": "Kinh nghiệm thực tế",
+        "highlight": false,
         "description": {
           "vi": "Giao tiếp bất đồng bộ giữa các service trong kiến trúc microservices.",
           "en": "Asynchronous inter-service communication in microservices architectures."
         }
       },
       {
+        "name": "OAuth2",
+        "level": "Experienced",
+        "experienceYears": "Kinh nghiệm thực tế",
+        "highlight": false,
+        "description": {
+          "vi": "Xác thực và phân quyền, tích hợp đăng nhập qua nhà cung cấp bên thứ ba như Google.",
+          "en": "Authentication and authorization, integrating third-party sign-in providers such as Google."
+        }
+      },
+      {
         "name": "TypeScript / JavaScript",
-        "level": "Proficient",
+        "level": "Experienced",
         "experienceYears": "Kinh nghiệm thực tế",
         "highlight": false,
         "description": {
@@ -48,13 +68,53 @@
     "title": { "vi": "Frontend Development", "en": "Frontend Development" },
     "skills": [
       {
-        "name": "ReactJS",
+        "name": "NextJS",
         "level": "Experienced",
         "experienceYears": "Kinh nghiệm thực tế",
         "highlight": true,
         "description": {
           "vi": "Xây dựng giao diện người dùng cho các dự án web fullstack.",
           "en": "Building user interfaces for fullstack web projects."
+        }
+      },
+      {
+        "name": "React Native / Expo",
+        "level": "Experienced",
+        "experienceYears": "Kinh nghiệm thực tế",
+        "highlight": true,
+        "description": {
+          "vi": "Xây dựng ứng dụng di động đa nền tảng (iOS/Android) với Expo, tích hợp NFC, push notification, REST API và xác thực.",
+          "en": "Building cross-platform mobile apps (iOS/Android) with Expo, integrating NFC, push notifications, REST APIs, and authentication."
+        }
+      },
+      {
+        "name": "Websocket",
+        "level": "Experienced",
+        "experienceYears": "Kinh nghiệm thực tế",
+        "highlight": true,
+        "description": {
+          "vi": "Giao tiếp hai chiều thời gian thực cho tính năng như thông báo, cập nhật newsfeed tức thì.",
+          "en": "Real-time bidirectional communication for features like live notifications and instant newsfeed updates."
+        }
+      },
+      {
+        "name": "Redux/Zustand",
+        "level": "Experienced",
+        "experienceYears": "Kinh nghiệm thực tế",
+        "highlight": true,
+        "description": {
+          "vi": "Quản lý state phía client cho ứng dụng React, giữ dữ liệu đồng bộ giữa các component.",
+          "en": "Client-side state management for React apps, keeping data in sync across components."
+        }
+      },
+      {
+        "name": "Shadcn UI",
+        "level": "Experienced",
+        "experienceYears": "Kinh nghiệm thực tế",
+        "highlight": true,
+        "description": {
+          "vi": "Xây dựng UI nhanh và nhất quán với bộ component dựa trên Radix UI và Tailwind CSS.",
+          "en": "Building fast, consistent UIs with a component library based on Radix UI and Tailwind CSS."
         }
       }
     ]
@@ -90,6 +150,16 @@
         "description": {
           "vi": "Lưu trữ dữ liệu dạng document cho các dự án phù hợp.",
           "en": "Document-based data storage for suitable projects."
+        }
+      },
+      {
+        "name": "Prisma / TypeORM",
+        "level": "Experienced",
+        "experienceYears": "Kinh nghiệm thực tế",
+        "highlight": false,
+        "description": {
+          "vi": "ORM cho Node.js: định nghĩa schema, migration và truy vấn type-safe.",
+          "en": "Node.js ORMs: schema definition, migrations, and type-safe queries."
         }
       }
     ]
@@ -128,13 +198,33 @@
         }
       },
       {
-        "name": "Postman",
+        "name": "Postman / Swagger",
         "level": "Proficient",
         "experienceYears": "Kinh nghiệm thực tế",
         "highlight": false,
         "description": {
-          "vi": "Kiểm thử và tài liệu hóa RESTful API.",
-          "en": "Testing and documenting RESTful APIs."
+          "vi": "Kiểm thử và tài liệu hóa RESTful API cho team frontend và đối tác tích hợp.",
+          "en": "Testing and documenting RESTful APIs for frontend teams and integration partners."
+        }
+      },
+      {
+        "name": "Vercel / Render",
+        "level": "Proficient",
+        "experienceYears": "Kinh nghiệm thực tế",
+        "highlight": false,
+        "description": {
+          "vi": "Triển khai frontend NextJS và backend service với CI/CD tự động từ Git.",
+          "en": "Deploying NextJS frontends and backend services with automated CI/CD from Git."
+        }
+      },
+      {
+        "name": "AI Coding Tools",
+        "level": "Proficient",
+        "experienceYears": "Kinh nghiệm thực tế",
+        "highlight": false,
+        "description": {
+          "vi": "Sử dụng Claude Code, Codex, Cursor và 9Router để tăng tốc phát triển và review code.",
+          "en": "Using Claude Code, Codex, Cursor, and 9Router to accelerate development and code review."
         }
       },
       {

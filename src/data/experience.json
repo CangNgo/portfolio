@@ -3,27 +3,25 @@
     "id": "exp-hopper",
     "company": "Hopper Solution and Education",
     "role": {
-      "vi": "Fullstack Developer & Business Analyst",
-      "en": "Fullstack Developer & Business Analyst"
+      "vi": "Lập trình viên R&D & Fullstack",
+      "en": "R&D and Fullstack Developer"
     },
-    "period": "05/2025 - 07/2026",
-    "isCurrent": true,
+    "period": "05/2025 - 01/2026",
+    "isCurrent": false,
     "location": "TP. Hồ Chí Minh",
     "description": {
       "vi": [
-        "Thiết kế và triển khai RESTful API phục vụ giao tiếp frontend-backend, cải thiện thời gian phản hồi hệ thống.",
-        "Tối ưu hóa truy vấn cơ sở dữ liệu bằng indexing và Redis caching, nâng cao hiệu năng hệ thống đáng kể.",
-        "Xử lý lỗi và cải tiến các tính năng hiện có để tăng độ ổn định và hiệu năng hệ thống.",
-        "Đảm nhận vai trò Business Analyst: phân tích cơ sở dữ liệu hiện có, thiết kế data model và chuyển hóa yêu cầu nghiệp vụ thành schema cơ sở dữ liệu tối ưu, hỗ trợ hệ thống backend có khả năng mở rộng."
+        "Xây dựng và tích hợp hơn 20 REST API bằng NestJS cho các module fintech cốt lõi: deposit, saving, membership và eKYC, trong đội ngũ 5 kỹ sư.",
+        "Thiết kế schema PostgreSQL và luồng dữ liệu cho 4 module nghiệp vụ chính, hỗ trợ xử lý giao dịch có khả năng mở rộng và truy vết.",
+        "Tham gia kiểm thử và validate hệ thống, phát hiện và xử lý lỗi trước khi phát hành lên production."
       ],
       "en": [
-        "Designed and implemented RESTful APIs to support frontend-backend communication and improve response time.",
-        "Optimized database queries through indexing and Redis caching to significantly improve system performance.",
-        "Resolved bugs and enhanced existing features to improve system stability and performance.",
-        "Served as a Business Analyst, analyzing existing databases, designing data models, and translating business requirements into optimized database schemas to support scalable backend systems."
+        "Built and integrated 20+ REST APIs using NestJS for core fintech modules — deposit, saving, membership, and eKYC — within a 5-engineer team.",
+        "Designed PostgreSQL schemas and data flows for 4 core business modules, supporting scalable and auditable transaction processing.",
+        "Participated in system testing and validation, identifying and resolving bugs before production release."
       ]
     },
-    "highlights": ["RESTful API", "Redis", "Database Optimization", "Business Analysis"]
+    "highlights": ["NestJS", "PostgreSQL", "RESTful API", "Fintech"]
   },
   {
     "id": "exp-hungthinh",
@@ -34,14 +32,16 @@
     "location": "TP. Hồ Chí Minh",
     "description": {
       "vi": [
+        "Xây dựng và tích hợp hơn 10 REST API bằng Spring Boot cho các module giáo dục cốt lõi.",
         "Phát triển và cải tiến các tính năng cốt lõi, nâng cao độ ổn định và khả năng bảo trì hệ thống.",
         "Tham gia kiểm thử và sửa lỗi nhằm giảm thiểu sự cố sau khi phát hành."
       ],
       "en": [
+        "Built and integrated 10+ REST APIs using Spring Boot for core education modules.",
         "Developed and enhanced core features, improving overall system stability and maintainability.",
         "Participated in testing and bug fixing to reduce post-release issues."
       ]
     },
-    "highlights": ["Web Development", "Testing", "Bug Fixing"]
+    "highlights": ["Spring Boot", "RESTful API", "Web Development", "Testing"]
   }
 ]

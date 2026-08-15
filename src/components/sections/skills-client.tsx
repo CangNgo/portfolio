@@ -25,7 +25,7 @@ export function SkillsClient({ categories }: { categories: SkillCategory[] }) {
   const t = useTranslations("Skills");
   const locale = useLocale() as Locale;
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedSkill, setSelectedSkill] = useState<string | null>("NestJS");
+  const [selectedSkill, setSelectedSkill] = useState<string | null>("Java (Spring Boot)");
 
   return (
     <section id="skills" className="max-w-6xl mx-auto px-4 sm:px-6 py-24">
