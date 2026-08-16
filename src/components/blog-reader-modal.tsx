@@ -4,6 +4,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { BookOpen, X } from "lucide-react";
 import { useModal } from "@/components/modal-context";
+import { renderMarkdown } from "@/lib/markdown";
 import type { Locale } from "@/i18n/routing";
 
 export function BlogReaderModal({ authorName }: { authorName: string }) {
@@ -57,9 +58,10 @@ export function BlogReaderModal({ authorName }: { authorName: string }) {
             ))}
           </div>
 
-          <div className="prose dark:prose-invert max-w-none text-sm sm:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed space-y-4 whitespace-pre-line font-sans">
-            {post.content[locale]}
-          </div>
+          <div
+            className="prose dark:prose-invert prose-zinc max-w-none text-sm sm:text-base prose-headings:font-bold prose-a:text-teal-600 dark:prose-a:text-teal-400"
+            dangerouslySetInnerHTML={{ __html: renderMarkdown(post.content[locale]) }}
+          />
 
           <Link
             href={`/blog/${post.slug}`}

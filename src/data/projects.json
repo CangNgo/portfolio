@@ -13,7 +13,7 @@
     "category": "Fullstack Web",
     "thumbnailUrl": "https://res.cloudinary.com/dwf2vqohm/image/upload/v1786796783/media_117f58ae-f307-42bb-849b-6b5142147cfb_background-login3.png",
     "demoUrl": "https://flowzone.vercel.app",
-    "githubUrl": "https://github.com/CangNgo/Fsocial",
+    "githubUrl": "https://github.com/CangNgo/fsocial_backend",
     "period": {
       "vi": "12/2025 - Hiện tại",
       "en": "12/2025 - Present"
@@ -139,6 +139,7 @@
     "featured": true,
     "category": "Mobile App",
     "thumbnailUrl": "https://res.cloudinary.com/dwf2vqohm/image/upload/v1786797269/media_4c27f636-33af-4d8b-8940-dc2c727aaf42_1786797224566_214223737948144677_2031845161217315310_12e0046570f0cd97b685e08effb204ab.png",
+    "demoUrl": "https://drive.google.com/drive/folders/15glDPKrd-U1NyYugSRxZcDAKIejMpEXO?usp=drive_link",
     "period": {
       "vi": "03/2026 - Hiện tại",
       "en": "03/2026 - Present"

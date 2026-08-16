@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getTranslations, getLocale } from "next-intl/server";
 import { BookOpen } from "lucide-react";
 import { getBlogPosts, getBlogPostBySlug, getProfile } from "@/lib/data";
+import { renderMarkdown } from "@/lib/markdown";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import type { Locale } from "@/i18n/routing";
@@ -68,9 +69,10 @@ export default async function BlogPostPage({
           ))}
         </div>
 
-        <div className="prose dark:prose-invert max-w-none text-sm sm:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed whitespace-pre-line font-sans">
-          {post.content[lang]}
-        </div>
+        <div
+          className="prose dark:prose-invert prose-zinc max-w-none text-sm sm:text-base prose-headings:font-bold prose-a:text-teal-600 dark:prose-a:text-teal-400"
+          dangerouslySetInnerHTML={{ __html: renderMarkdown(post.content[lang]) }}
+        />
 
         <div className="pt-6 border-t border-zinc-200 dark:border-zinc-800">
           <span className="text-xs font-mono text-zinc-400">

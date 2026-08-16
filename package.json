@@ -10,7 +10,9 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.20",
     "lucide-react": "^0.546.0",
+    "marked": "^18.0.9",
     "motion": "^13.0.0",
     "next": "16.3.0",
     "next-intl": "^4.13.5",
